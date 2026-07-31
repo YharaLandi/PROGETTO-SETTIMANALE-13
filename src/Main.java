@@ -1,9 +1,5 @@
 import entities.*;
-import exception.DurataNonValidaException;
-import exception.FrequenzaNonValidaException;
-import exception.ScadenzaPassataException;
-
-import java.lang.reflect.Array;
+import exception.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -44,6 +40,48 @@ public class Main {
             new TaskConScadenza("T006", "Task scaduta", Task.Priorita.ALTA, 20, LocalDate.now().minusDays(1));
         } catch (ScadenzaPassataException e) {
             System.out.println("ScadenzaPassata: " + e.getMessage());
+        }
+
+
+
+
+        // Controlli del TaskManager
+        TaskManager tm = new TaskManager();
+        tm.aggiungiTask(ts);
+        tm.aggiungiTask(tcs);
+        tm.aggiungiTask(tr);
+
+
+        // cerca per codice
+        System.out.println(tm.cercaPerCodice("T001"));
+
+
+        // cerca per priorità
+        tm.cercaPerPriorita(Task.Priorita.ALTA).forEach(System.out::println);
+
+
+        // completa e rimuovi
+        tm.completaTask("T001");
+        tm.rimuoviTask("T002");
+
+
+        // statistiche
+        tm.stampaStatistiche();
+
+
+        // codice duplicato
+        try {
+            tm.aggiungiTask(ts);
+        } catch (NonDuplicareException e) {
+            System.out.println("Duplicato: " + e.getMessage());
+        }
+
+
+        // task non trovata
+        try {
+            tm.cercaPerCodice("T999");
+        } catch (TaskNonTrovataException e) {
+            System.out.println("Non trovata: " + e.getMessage());
         }
     }
 }
