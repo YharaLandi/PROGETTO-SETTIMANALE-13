@@ -1,3 +1,6 @@
+package entities;
+import exception.FrequenzaNonValidaException;
+
 public class TaskRicorrente extends Task {
     private int frequenzaGiorni;
     private int volteCompletato;
@@ -23,5 +26,13 @@ public class TaskRicorrente extends Task {
 
     public int getVolteCompletato() {
         return volteCompletato;
+    }
+
+    @Override
+    public String toString() {
+        return "TaskRicorrente{" +
+                "frequenzaGiorni=" + frequenzaGiorni +
+                ", volteCompletato=" + volteCompletato +
+                '}';
     }
 }

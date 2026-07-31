@@ -1,3 +1,5 @@
+package entities;
+
 import exception.ScadenzaPassataException;
 
 import java.time.LocalDate;
@@ -28,4 +30,10 @@ public class TaskConScadenza extends Task {
         return dataScadenza;
     }
 
+    @Override
+    public String toString() {
+        return "TaskConScadenza{" +
+                "dataScadenza=" + dataScadenza +
+                '}';
+    }
 }

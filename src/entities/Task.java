@@ -1,3 +1,6 @@
+package entities;
+import exception.DurataNonValidaException;
+
 public abstract class Task {
     private String codice;
     private String titolo;
@@ -5,7 +8,7 @@ public abstract class Task {
     private int durataMinuti;
     private boolean completato;
 
-    // Costruttore comune: anche se Task è astratta e non si può istanziare direttamente,
+    // Costruttore comune: anche se entities.Task è astratta e non si può istanziare direttamente,
     // questo costruttore viene richiamato da ogni sottoclasse tramite super(...)
     // per inizializzare i campi condivisi e validare la durata una sola volta per tutte
     public Task(String codice, String titolo, Priorita priorita, int durataMinuti) {

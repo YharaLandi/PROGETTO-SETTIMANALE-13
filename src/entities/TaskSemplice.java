@@ -1,3 +1,5 @@
+package entities;
+
 public class TaskSemplice extends Task {
 
     public TaskSemplice(String codice, String titolo, Priorita priorita, int durataMinuti) {
@@ -11,5 +13,8 @@ public class TaskSemplice extends Task {
         setCompletato(true);
     }
 
-
+    @Override
+    public String toString() {
+        return "TaskSemplice{}";
+    }
 }
