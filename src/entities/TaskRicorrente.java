@@ -28,11 +28,13 @@ public class TaskRicorrente extends Task {
         return volteCompletato;
     }
 
+
+
     @Override
     public String toString() {
-        return "TaskRicorrente{" +
-                "frequenzaGiorni=" + frequenzaGiorni +
-                ", volteCompletato=" + volteCompletato +
-                '}';
+        return "TASK RICORRENTE: " + super.toString() +
+                " " +
+                "Frequenza=" + frequenzaGiorni +
+                " Completato=" + volteCompletato + " volte";
     }
 }

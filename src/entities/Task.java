@@ -53,4 +53,11 @@ public abstract class Task {
     public int getDurataMinuti() {
         return durataMinuti;
     }
+
+
+  //segnaposto come forma di validazione dell'istanza dei nuovi oggetti figli di Task
+    @Override
+    public String toString() {
+        return codice + " " + titolo + " " + priorita + " " + durataMinuti + " minuti" + " " + (completato ? "COMPLETATO" : "DA FARE");
+}
 }

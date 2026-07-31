@@ -26,14 +26,14 @@ public class TaskConScadenza extends Task {
     public boolean isScaduto() {
         return LocalDate.now().isAfter(dataScadenza);
     }
+
     public LocalDate getDataScadenza() {
         return dataScadenza;
     }
 
     @Override
     public String toString() {
-        return "TaskConScadenza{" +
-                "dataScadenza=" + dataScadenza +
-                '}';
+        return "TASK CON SCDENZA: " + super.toString() + " " +
+                "Data Scadenza= " + dataScadenza;
     }
 }

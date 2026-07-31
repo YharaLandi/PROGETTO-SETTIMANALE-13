@@ -15,6 +15,6 @@ public class TaskSemplice extends Task {
 
     @Override
     public String toString() {
-        return "TaskSemplice{}";
+        return "TASK SEMPLICE: " + super.toString();
     }
 }
