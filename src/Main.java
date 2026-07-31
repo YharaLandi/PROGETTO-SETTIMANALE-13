@@ -84,5 +84,12 @@ public class Main {
         } catch (TaskNonTrovataException e) {
             System.out.println("Non trovata: " + e.getMessage());
         }
+
+        // completamento con codice non valido
+        try {
+            tm.completaTask("T999");
+        } catch (TaskNonTrovataException e) {
+            System.out.println("Completamento fallito: " + e.getMessage());
+        }
     }
 }
