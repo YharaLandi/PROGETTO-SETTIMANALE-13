@@ -43,8 +43,7 @@ public class Main {
         }
 
 
-
-
+        System.out.println("////////////////////////////////////////////////////TASKMANAGER CONTROLLINO///////////////////////////////////////////////////");
         // Controlli del TaskManager
         TaskManager tm = new TaskManager();
         tm.aggiungiTask(ts);
@@ -62,7 +61,9 @@ public class Main {
 
         // completa e rimuovi
         tm.completaTask("T001");
+        System.out.println("T001 completato: " + tm.cercaPerCodice("T001").isCompletato());
         tm.rimuoviTask("T002");
+        System.out.println("T002 rimossa con successo");
 
 
         // statistiche
