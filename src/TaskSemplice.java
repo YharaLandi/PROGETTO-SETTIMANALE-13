@@ -4,17 +4,12 @@ public class TaskSemplice extends Task {
         super(codice, titolo, priorita, durataMinuti);
     }
 
+
     ///prova
     @Override
     public void completa() {
         setCompletato(true);
     }
-
-
-
-
-
-
 
 
 }
